@@ -27,9 +27,105 @@ var jugador;
 
 var modo = 0;	//Raycasting = 0     Mapa = 1
 
+function dedoToca(dedo, cuadro) {
+return ((dedo.x > cuadro.x1) && (dedo.x < cuadro.x2) && (dedo.y > cuadro.y1) && (dedo.y < cuadro.y2))
+}
+
+canvas.addEventListener('touchstart', function(e) {
+let cuadros = {
+izquierda: {
+x1: 0,
+x2: canvas.width/3,
+y1: canvas.height/3,
+y2: canvas.height/3*2
+},
+derecha: {
+x1: canvas.width/3*2,
+x2: canvas.width,
+y1: canvas.height/3,
+y2: canvas.height/3*2
+},
+arriba: {
+x1: canvas.width/3,
+x2: canvas.width/3*2,
+y1: 0,
+y2: canvas.height/3
+},
+abajo: {
+x1: canvas.width/3,
+x2: canvas.width/3*2,
+y1: canvas.height/3*2,
+y2: canvas.height
+}
+}
+let dedo = {
+x: e.touches[0].clientX,
+y: e.touches[0].clientY
+}
+if(dedoToca(dedo, cuadros.izquierda)) {
+jugador.izquierda();
+}
+if(dedoToca(dedo, cuadros.derecha)) {
+jugador.derecha();
+}
+if(dedoToca(dedo, cuadros.arriba {
+jugador.arriba();
+}
+if(dedoToca(dedo, cuadros.abajo)) {
+jugador.abajo();
+}
+}
 
 
 
+canvas.addEventListener('touchend', function(e) {
+let cuadros = {
+izquierda: {
+x1: 0,
+x2: canvas.width/3,
+y1: canvas.height/3,
+y2: canvas.height/3*2
+},
+derecha: {
+x1: canvas.width/3*2,
+x2: canvas.width,
+y1: canvas.height/3,
+y2: canvas.height/3*2
+},
+arriba: {
+x1: canvas.width/3,
+x2: canvas.width/3*2,
+y1: 0,
+y2: canvas.height/3
+},
+abajo: {
+x1: canvas.width/3,
+x2: canvas.width/3*2,
+y1: canvas.height/3*2,
+y2: canvas.height
+}
+}
+let dedo = {
+x: e.changedTouches[0].clientX,
+y: e.changedTouches[0].clientY
+}
+if(dedoToca(dedo, cuadros.izquierda)) {
+jugador.giraSuelta();
+}
+if(dedoToca(dedo, cuadros.derecha)) {
+jugador.giraSuelta();
+}
+if(dedoToca(dedo, cuadros.arriba {
+jugador.avanzaSuelta();
+}
+if(dedoToca(dedo, cuadros.abajo)) {
+jugador.avanzaSuelta();
+}
+}
+
+
+
+			
 
 //----------------------------------------------------------------------
 //TECLADO
