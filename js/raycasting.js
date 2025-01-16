@@ -28,34 +28,34 @@ var jugador;
 var modo = 0;	//Raycasting = 0     Mapa = 1
 
 function dedoToca(dedo, cuadro) {
-return ((dedo.x > cuadro.x1) && (dedo.x < cuadro.x2) && (dedo.y > cuadro.y1) && (dedo.y < cuadro.y2))
+return ((dedo.x > cuadro.x1) && (dedo.x < cuadro.x2) && (dedo.y > cuadro.y1) && (dedo.y < cuadro.y2));
 }
 
-canvas.addEventListener('touchstart', function(e) {
+document.addEventListener('touchstart', function(e) {
 let cuadros = {
 izquierda: {
 x1: 0,
-x2: canvas.width/3,
-y1: canvas.height/3,
-y2: canvas.height/3*2
+x2: canvasAncho/3,
+y1: canvasAlto/3,
+y2: canvasAlto/3*2
 },
 derecha: {
-x1: canvas.width/3*2,
-x2: canvas.width,
-y1: canvas.height/3,
-y2: canvas.height/3*2
+x1: canvasAncho/3*2,
+x2: canvasAncho,
+y1: canvasAlto/3,
+y2: canvasAlto/3*2
 },
 arriba: {
-x1: canvas.width/3,
-x2: canvas.width/3*2,
+x1: canvasAncho/3,
+x2: canvasAncho/3*2,
 y1: 0,
-y2: canvas.height/3
+y2: canvasAlto/3
 },
 abajo: {
-x1: canvas.width/3,
-x2: canvas.width/3*2,
-y1: canvas.height/3*2,
-y2: canvas.height
+x1: canvasAncho/3,
+x2: canvasAncho/3*2,
+y1: canvasAlto/3*2,
+y2: canvasAlto
 }
 }
 let dedo = {
@@ -78,31 +78,31 @@ jugador.abajo();
 
 
 
-canvas.addEventListener('touchend', function(e) {
+document.addEventListener('touchend', function(e) {
 let cuadros = {
 izquierda: {
 x1: 0,
-x2: canvas.width/3,
-y1: canvas.height/3,
-y2: canvas.height/3*2
+x2: canvasAncho/3,
+y1: canvasAlto/3,
+y2: canvasAlto/3*2
 },
 derecha: {
-x1: canvas.width/3*2,
-x2: canvas.width,
-y1: canvas.height/3,
-y2: canvas.height/3*2
+x1: canvasAncho/3*2,
+x2: canvasAncho,
+y1: canvasAlto/3,
+y2: canvasAlto/3*2
 },
 arriba: {
-x1: canvas.width/3,
-x2: canvas.width/3*2,
+x1: canvasAncho/3,
+x2: canvasAncho/3*2,
 y1: 0,
-y2: canvas.height/3
+y2: canvasAlto/3
 },
 abajo: {
-x1: canvas.width/3,
-x2: canvas.width/3*2,
-y1: canvas.height/3*2,
-y2: canvas.height
+x1: canvasAncho/3,
+x2: canvasAncho/3*2,
+y1: canvasAlto/3*2,
+y2: canvasAlto
 }
 }
 let dedo = {
